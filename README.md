@@ -6,6 +6,7 @@ Config to spin up FoundryVTT in a Docker container with nginx acting as a proxy 
 **PRE-REQUIREMENTS**: 
 * FoundryVTT (the Linux/NodeJS option) is downloaded from [foundryvtt.com](https://foundryvtt.com/)
 * Domain name pointing at your server (A type record)
+* Git installed ([official website](https://git-scm.com/downloads))
 
 &nbsp;
 
