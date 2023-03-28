@@ -7,7 +7,11 @@ Config to spin up FoundryVTT in a Docker container with nginx acting as a proxy 
 * FoundryVTT (the Linux/NodeJS option) is downloaded from [foundryvtt.com](https://foundryvtt.com/)
 * Domain name pointing at your server (A type record)
 
+&nbsp;
+
 **NOTE**: Only Debian (and derivative) platforms are supported by `_bootstrap.sh`; however, the packages installed are available on many distros. Feel free to edit to utilize your system's package manager.
+
+&nbsp;
 
 1. Clone the repo
     `git clone https://github.com/mshafer1/foundryvtt-host`
