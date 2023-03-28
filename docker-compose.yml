@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+    fvtt:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+            args:
+                - NODEJS_VERSION=${NODEJS_VERSION:-18.15.0-r0}
+                - FOUNDRY_DIR=${FOUNDRY_DIR:-.}
+                - FOUNDRY_VERSION=${FOUNDRY_VERSION:-10.291}
+        volumes:
+            - ${ROOT_DIR}/app:/home/foundry/fvtt
+            - ${ROOT_DIR}/data:/home/foundry/fvttdata
+        ports:
+            - "30000:30000"
+        user: "foundry:foundry"
