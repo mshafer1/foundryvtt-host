@@ -10,8 +10,6 @@ services:
                 - FOUNDRY_DIR=${FOUNDRY_DIR:-.}
                 - FOUNDRY_VERSION=${FOUNDRY_VERSION:-10.291}
         volumes:
-            - ${ROOT_DIR}/app:/home/foundry/fvtt
-            - ${ROOT_DIR}/data:/home/foundry/fvttdata
+            - ${ROOT_DIR:-foundry_data}/data:/home/foundry/fvttdata
         ports:
-            - "30000:30000"
-        user: "foundry:foundry"
+            - "127.0.0.1:30000:30000"
