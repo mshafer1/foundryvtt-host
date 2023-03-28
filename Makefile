@@ -1,5 +1,9 @@
 include .env
 
+ifeq ($(strip $(DOMAIN)),)
+$(error DOMAIN must be specified in the .env file.)
+endif
+
 all: install
 
 clean:
@@ -10,11 +14,14 @@ objects/:
 
 objects/install: templates/nginx_host.template .env objects/
 	sed \
-	-e "s/'{DOMAIN}'/$(DOMAIN)/g" \
-	$< > objects/_temp_test_config && \
+	-e "s/{DOMAIN}/$(DOMAIN)/g" \
+	$< > objects/_temp_test_config
+	
 	cp -f objects/_temp_test_config /etc/nginx/sites-enabled/$(DOMAIN)
+	
 	nginx -t
 	systemctl restart nginx
+
 	touch $@
 
 objects/install_ssl: objects/install
