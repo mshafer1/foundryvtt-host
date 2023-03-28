@@ -27,6 +27,7 @@ Config to spin up FoundryVTT in a Docker container with nginx acting as a proxy 
     `chmod +x _bootstrap.sh`
 
 1. Use `_bootstrap.sh` to install deps and build container.
+   
     `sudo ./_bootsrap.sh`
 
 1. Restart shell (log out and back in, or close and re-open terminal)
