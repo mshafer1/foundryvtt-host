@@ -1,3 +1,4 @@
 .env
 FoundryVTT-*.zip
 foundry_data/
+objects/
