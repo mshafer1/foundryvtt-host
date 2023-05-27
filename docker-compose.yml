@@ -13,3 +13,8 @@ services:
             - ${ROOT_DIR:-foundry_data}/data:/home/foundry/fvttdata
         ports:
             - "127.0.0.1:30000:30000"
+        deploy:
+            resources:
+                limits:
+                    cpus: 0.50
+                    memory: 512M
