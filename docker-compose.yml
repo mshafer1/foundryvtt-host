@@ -2,6 +2,7 @@ version: "3.3"
 
 services:
     fvtt:
+        restart: unless-stopped
         build:
             context: ./
             dockerfile: Dockerfile
@@ -13,9 +14,3 @@ services:
             - ${ROOT_DIR:-foundry_data}/data:/home/foundry/fvttdata
         ports:
             - "30000:30000"
-        deploy:
-            resources:
-                limits:
-                    cpus: 0.50
-                    memory: 512M
-        memswap_limit: 2G
