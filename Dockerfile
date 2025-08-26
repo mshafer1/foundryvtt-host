@@ -1,4 +1,4 @@
-FROM alpine:3.17
+FROM alpine:3.22.1
 
 # Set the foundry install home
 RUN adduser -D foundry
